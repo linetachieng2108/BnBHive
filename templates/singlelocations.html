@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Singlelocations</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body style="background:#CCBFE7">
+<!--Navbar here-->
+{% include 'navbar.html' %}
+<br><br><br>
+        <section class="row">
+            <div class="col-md-3" style='padding:2%;'>
+                <img src="../static/{{row[3]}}" alt="" class="img-fluid img-thumbnail">
+
+            </div>
+            <div class="col-md-3" style='padding:2%;'>
+                <img src="../static/{{row[6]}}" alt="" class="img-fluid img-thumbnail">
+
+            </div>
+
+
+            <div class="col-md-3">
+
+                <label for="">No of guests expected</label>
+                <input type="number" placeholder="" class="form-control">
+                    <label for="">Check in date:</label>
+                    <input type="" placeholder="" class="form-control">
+                    <label for="">Check out date:</label>
+                    <input type="" placeholder="" class="form-control"><br>
+                <h4><b style="color:black;">KES {{row[2]}} per night</b></h4>
+                <br>
+                {% if session.user %}
+                <form action="/mpesa_payment" method="post">
+                    <input type="tel" name="phone" placeholder="To Pay,Enter your Phone i.e: +254..." required><br>
+                    <input type="hidden" value="{{row[2]}}" name="pricing"><br>
+                    <input type="submit" value="Reserve" class="btn btn-primary btn-lg btn-block">
+                </form>
+                <br>
+                {% else %}
+                    Login to Make Payment
+                {% endif %}
+
+            </div>
+        </section><hr>
+        <section class="row">
+            <div class="col-md-8" style="padding:2%;" >
+                <h5>Suitable for:
+                    <b>{{row[4]}}</b></h5>
+                <span></span>
+                <h5>Description</h5>
+                <span>{{row[5]}}</span>
+                <br><br>
+                <br>
+                <hr>
+            </div>
+            <div class="col-md-4" >
+                {% if session.user %}
+                <a href="/logout">Logout</a>
+
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <ul class=flashes>
+                {% for message in messages %}
+                  <li class="text-success">{{ message }}</li>
+                {% endfor %}
+                </ul>
+              {% endif %}
+                {% endwith %}
+
+                <form action="" method="post">
+                    <h4>
+                        Write a Review
+                    </h4>
+                    <input type="hidden" value="{{session.user}}" name="user">
+                    <textarea name="message" id="" cols="30" rows="4" class="form-control"></textarea><br>
+                    <input type="submit" value="Send Review" class = "btn btn-success">
+                </form>
+                {% else %}
+                <b>Login to post a review <a href="/login">Login Here</a></b>
+                {% endif %}
+            </div>
+
+
+
+
+
+
+        </section>
+        <br>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HOMEPAGE</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+
+<!--https://getbootstrap.com/-->
+<!--https://getbootstrap.com/docs/4.6/getting-started/introduction/-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body style="background:#DFDCE5" >
+<!--https://hackerthemes.com/bootstrap-cheatsheet/-->
+
+<!--Navbar here-->
+{% include 'navbar.html' %}
+
+
+<br><br><br>
+<!--Carousel here-->
+<div class="container">
+    <div id="carouselFadeExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
+        <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active">
+                <img src="../static/abb.png" class="img-fluid">
+            </div>
+        </div>
+
+        <a class="carousel-control-prev" href="#carouselFadeExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselFadeExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+         </a>
+    </div>
+</div>
+
+
+
+
+<br>
+<br>
+<div class="container">
+    <h1 align="center"><font face="Comic Sans MS" size="7" >ABOUT US</font></h1>
+    <hr color="black">
+    <section class="row">
+        <div class="col-md-7">
+            <p>Welcome to our Airbnb website! We are a platform that connects travelers with unique and authentic
+                accommodations around Nairobi. Our goal is to make travel more accessible, affordable, and
+                meaningful by connecting people with unforgettable experiences.
+
+                Our community of hosts offers a wide variety of accommodations, including private rooms, apartments,
+                houses, and even unique stays like tree houses. Each listing is carefully vetted to ensure quality
+                and safety, and our platform offers a secure booking process and 24/7 customer support.
+
+                At our core, we believe that travel should be more than just a transactional experience. That's why
+                we encourage our hosts to share their local knowledge and insider tips with their guests, and we
+                offer experiences and activities that allow travelers to connect with the culture and people of
+                the places they visit.
+
+                We are proud to be a  platform that promotes inclusivity, diversity, and belonging. Our community
+                of hosts and guests comes from all walks of life, and we believe that everyone deserves to feel
+                welcomed and valued when they travel.
+
+                Thank you for choosing our Airbnb website as your go-to platform for travel. We can't wait to help you
+            create unforgettable memories and experiences around the world.</p>
+
+        </div>
+        <div class="col-md-5">
+            <img src="../static/logo2.png">
+        </div>
+
+    </section>
+    <br>
+    <br>
+    <br>
+    <h4>WE OFFER ACCOMODATIONS LOCATED AT:</h4><hr>
+
+    <br>
+
+<div class="card-deck">
+  <div class="card bg-blue">
+      <h5>Westlands</h5>
+    <img class="card-img-top" src="../static/family.jpg" alt="Card image cap">
+    <div class="card-body">
+        <a href="/locations" class="btn btn-primary stretched-link">See More</a>
+    </div>
+  </div>
+
+    <div class="card">
+      <div class="card.bg-light">
+        <h4>Kileleshwa</h4>
+        <img class="card-img-top" src="../static/house2.jpg" alt="Card image cap">
+            <div class="card-body">
+        <a href="/locations" class="btn btn-primary stretched-link">See More</a>
+        </div>
+      </div>
+  </div>
+
+    <div class="card">
+      <h5>Karen</h5>
+    <img class="card-img-top" src="../static/studio.jpg" alt="Card image cap">
+    <div class="card-body">
+        <a href="/locations" class="btn btn-primary stretched-link">See More</a>
+    </div>
+  </div>
+
+    <div class="card">
+        <h4>Runda</h4>
+        <img class="card-img-top" src="../static/house3.png" alt="Card image cap">
+        <div class="card-body">
+            <a href="/locations" class="btn btn-primary stretched-link">See More</a>
+        </div>
+  </div>
+
+    <div class="card">
+                <h4>Lavington</h4>
+                <img class="card-img-top" src="../static/house.jpg" alt="Card image cap" >
+                <div class="card-body ">
+                    <a href="/locations" class="btn btn-primary stretched-link">See More</a>
+                </div>
+            </div>
+        </div>
+
+</div>
+<!--Footer here-->
+<br><br><br><br><hr>
+{% include 'footer.html' %}
+    <br>
+
+    <hr>
+
+
+
+<hr>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+
+</body>
+</html>
